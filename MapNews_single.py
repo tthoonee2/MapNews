@@ -1,4 +1,4 @@
-Codice parte 1 (funzionante le i sino estrazione via) manca ottimizazione, error handling e debugging di ultime cose).
+#Codice parte 1 (funzionante le i sino estrazione via) manca ottimizazione, error handling e debugging di ultime cose).
 
 
 from os import read
@@ -106,7 +106,7 @@ for i in file_list:
 
 
 
-Codice parte 2: geocoding (da indirizzo a cooridinate)(funzionante) e upload (tramite api)(non funzionante)
+#Codice parte 2: geocoding (da indirizzo a cooridinate)(funzionante) e upload (tramite api)(non funzionante)
 
 import json
 import requests
