@@ -21,18 +21,20 @@ list_rep = []
 i = 0
 sloc = []
 for pars in paragraph_cleaned:
-    sloc.append(pars.find('via '))# or 'piazza ' or 'viale ' or 'corso ')
-    print(sloc)
-    if sloc[i] != -1:
+    if re.match('via ',pars) != None:
+        print('shish')
+        sloc.append(pars.find('via '))# or 'piazza ' or 'viale ' or 'corso ')
+        print(sloc[i])
+        i +=1
         print(sloc)
         print(True)
-        listofvie.append(re.findall('via ',pars))
+        listofvie.append('via')
         print(listofvie)
         part = pars[sloc:25]
         print(part)
         listofvie[i] += ' '
         print(listofvie)
-        listofvie[i] += re.findall(part,'([A-Z].\S+')                                #regex = r"(\b[A-Z].*?\b)"
+        listofvie[i] += re.findall(part,'([A-Z].\S+') #(re.fullmatch('via ',pars))                               #regex = r"(\b[A-Z].*?\b)"
         i += 1                                #matches = re.compile(regex, re.MULTILINE)
     else:
         print('no match')    
@@ -53,3 +55,5 @@ result =
 print(result)
 
 """
+
+import re
