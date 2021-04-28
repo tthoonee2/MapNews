@@ -13,19 +13,21 @@ paragraphs = soup.find_all('p')
 for i in range(0,len(paragraphs)):
     paragraph_cleaned.append(paragraphs[i].text)
 
+print(paragraph_cleaned)
 
 #print(paragraph_cleaned)
 #up until here it is debugged
 list_rep = []
 i = 0
+sloc = []
 for pars in paragraph_cleaned:
-    sloc = pars.find('via ')# or 'piazza ' or 'viale ' or 'corso ')
-    if sloc != -1:
+    sloc.append(pars.find('via '))# or 'piazza ' or 'viale ' or 'corso ')
+    print(sloc)
+    if sloc[i] != -1:
         print(sloc)
         print(True)
-        listofvie.append(re.find('via ',pars))
+        listofvie.append(re.findall('via ',pars))
         print(listofvie)
-        print(pars)
         part = pars[sloc:25]
         print(part)
         listofvie[i] += ' '
