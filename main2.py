@@ -12,19 +12,29 @@ soup = BeautifulSoup(r.text,'lxml')
 paragraphs = soup.find_all('p')
 for i in range(0,len(paragraphs)):
     paragraph_cleaned.append(paragraphs[i].text)
-    
+
+
 #print(paragraph_cleaned)
 #up until here it is debugged
-
+list_rep = []
+i = 0
 for pars in paragraph_cleaned:
     sloc = pars.find('via ')# or 'piazza ' or 'viale ' or 'corso ')
-    if sloc != None:
-        listofvie.append(pars.search('via ' or 'piazza ' or 'viale ' or 'corso '))
+    if sloc != -1:
+        print(sloc)
+        print(True)
+        listofvie.append(re.find('via ',pars))
+        print(listofvie)
+        print(pars)
         part = pars[sloc:25]
-        regex = r"(\b[A-Z].*?\b)"
-        matches = re.compile(regex, re.MULTILINE)
-        listofvie[pars] += ' '
-        listofvie[pars] += matches.findall(pars)
+        print(part)
+        listofvie[i] += ' '
+        print(listofvie)
+        listofvie[i] += re.findall(part,'([A-Z].\S+')                                #regex = r"(\b[A-Z].*?\b)"
+        i += 1                                #matches = re.compile(regex, re.MULTILINE)
+    else:
+        print('no match')    
+                                        #listofvie[pars] += matches.findall(pars)
     
     
 print(listofvie)
