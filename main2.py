@@ -21,8 +21,27 @@ list_rep = []
 i = 0
 sloc = []
 for pars in paragraph_cleaned:
+    if re.fullmatch('via ', pars) is not None:
+        list_rep.append(re.fullmatch('via ', pars))
+        print(list_rep)
+        list_rep[i] += re.fullmatch('([A-Z].\S+', pars )
+        i += 1
+    
+print(list_rep)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    """
     if re.match('via ',pars) != None:
-        print('shish')
         sloc.append(pars.find('via '))# or 'piazza ' or 'viale ' or 'corso ')
         print(sloc[i])
         i +=1
@@ -43,7 +62,7 @@ for pars in paragraph_cleaned:
     
 print(listofvie)
         
-        
+        """
     
 
 """
